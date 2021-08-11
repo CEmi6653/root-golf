@@ -30,6 +30,7 @@ header{
 
 .title{
   color: white;
+  font-family: cursive,sans-serif,serif;
 }
 
 .navbar {
@@ -41,9 +42,209 @@ header{
   display: flex;
   justify-content: space-around;
   color: white;
-
 }
 
 li {
   list-style: none;
 }
+
+.contents {
+ color: white;
+}
+
+.first-view{
+  height: 100vh;
+    background-image: image-url('golf.sample1.png') ;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+}
+
+
+.topic-content {
+  height: 200px;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.page-description{
+  display: block;
+  text-align: justify;
+  padding: 50px 50px;
+  font-family: serif,sans-serif, cursive;
+  color: #333;
+}
+
+
+.golf-contents{
+  height: 100vh;
+    // background-color: orange;
+    background-image: image-url('golf.sample.png');
+    // background: url(https://www.s-gc.net/campaign/asset/img/advantage_inner_back.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.golf-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+  color:white;
+  font-family: cursive,sans-serif,serif;
+}
+
+h3{
+  font-family: cursive, sans-serif, serif ;
+}
+
+.subtitle {
+font-family: cursive, sans-serif,serif;
+}
+
+
+.golf-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+}
+
+.golf-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0.50;
+}
+
+.golf-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+}
+
+
+.golf-img-content {
+  position: relative;
+}
+
+.golf-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+
+
+
+.golf-info {
+ 
+  color: black;
+  padding: 1vw;
+}
+
+.golf-name {
+  font-size: 2.5vh;
+  color: white;
+}
+
+.golf-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+
+.tweet-btn {
+  width: 120px;
+  background: grey;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  left: 32px;
+  position: fixed;
+  padding: 15px;
+}
+.tweet-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.tweet-btn-icon {
+  width: 60%;
+}
+
+
+.footer {
+  height: 100vh;
+  width: 100vw;
+  padding: 5vh 0;
+  color: #FFF;
+  background-image: image-url('footer.png');
+  background-size:  cover;   
+  text-align: center;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.furima-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.logo-white {
+  width: 20vh;
+  vertical-align: bottom;
+  opacity: 0.40;
+  font-size: 30px;
+  font-family: cursive,sans-serif;
+  margin-top: 10px;
+}
+
+
