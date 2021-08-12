@@ -1,0 +1,416 @@
+// Place all the styles related to the golfs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-size: 30px;
+  color: #333;
+  margin: 0 auto;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+header{
+  height: 100px;
+  background: black;
+}
+
+
+
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+  
+  background-image: image-url("golfswing-no1.png");
+  background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+  font-family: cursive,sans-serif,serif;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  font-size: 200px;
+}
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    // background-color:cornflowerblue;/*伸びる背景色の設定*/
+    background-image: image-url("golf-page-image.png");
+    background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+  }
+}
+
+html,body{
+	height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+
+
+  
+
+
+.header-area{
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.heading{
+  width: 50%;
+  margin-left: 30px;
+}
+
+.title{
+  color: white;
+  font-family: cursive,sans-serif,serif;
+}
+
+.navbar {
+  width: 50%;
+  padding: 20px;
+}
+
+.nav-lists {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-family: cursive,sans-serif,serif;
+}
+
+li {
+  list-style: none;
+}
+
+
+/*====== 9-1-1 縦線が動いてスクロールを促す =======*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown1{
+  /*描画位置※位置は適宜調整してください*/
+position:absolute;
+left:50%;
+bottom:10px;
+  /*全体の高さ*/
+height:50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+  /*描画位置*/
+position: absolute;
+left:-15px;
+top: -15px;
+  /*テキストの形状*/
+color: #eee;
+font-size: 0.7rem;
+letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+content: "";
+  /*描画位置*/
+position: absolute;
+top: 0;
+  /*線の形状*/
+width: 1px;
+height: 30px;
+background: #eee;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+animation: pathmove 1.4s ease-in-out infinite;
+opacity:0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+0%{
+  height:0;
+  top:0;
+  opacity: 0;
+}
+30%{
+  height:30px;
+  opacity: 1;
+}
+100%{
+  height:0;
+  top:50px;
+  opacity: 0;
+}
+}
+.contents {
+ color: white;
+}
+
+.first-view{
+  height: 100vh;
+    background-image: image-url('golf.sample1.png') ;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+   
+}
+
+
+.topic-content {
+  height: 200px;
+  background-color:white;
+  display: flex;
+  justify-content: center;
+}
+
+.page-description{
+  display: block;
+  text-align: justify;
+  padding: 50px 50px;
+  font-family: serif,sans-serif, cursive;
+  color: #333;
+}
+
+
+.golf-contents{
+  height: 100vh;
+    // background-color: orange;
+    background-image: image-url('golf.sample.png');
+    // background: url(https://www.s-gc.net/campaign/asset/img/advantage_inner_back.jpg) ;
+    background-size: cover;
+    background-position: center center;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.golf-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+  color:white;
+  font-family: cursive,sans-serif,serif;
+}
+
+h3{
+  font-family: cursive, sans-serif, serif ;
+}
+
+.subtitle {
+font-family: cursive, sans-serif,serif;
+}
+
+
+.golf-contents>.subtitle {
+  font-size: 3vh;
+  margin: 1vh 0;
+  text-decoration: none;
+  color:white;
+  font-weight: bold;
+}
+
+.golf-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 0.70;
+}
+
+.golf-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+}
+
+
+.golf-img-content {
+  position: relative;
+}
+
+.golf-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+
+
+
+.golf-info {
+ 
+  color: black;
+  padding: 1vw;
+}
+
+.golf-name {
+  font-size: 2.5vh;
+  color: white;
+}
+
+.golf-price {
+  font-size: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+
+.star-btn {
+  display: flex;
+  align-items: center;
+}
+
+.star-icon {
+  height: 2vh;
+  width: 2vh;
+  margin-right: 0.5vw;
+}
+
+.star-count {
+  font-size: 2vh;
+}
+
+.tweet-btn {
+  width: 120px;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  left: 32px;
+  position: fixed;
+  padding: 15px;
+  opacity: 0.7;
+}
+.tweet-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.tweet-btn-icon {
+  width: 60%;
+}
+
+
+.footer {
+  height: 100vh;
+  width: 100vw;
+  padding: 5vh 0;
+  color: #FFF;
+  background-image: image-url('footer.png');
+  background-size:  cover;   
+  text-align: center;
+}
+
+.footer-contents {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.root-golf-details {
+  margin: 0 4vw;
+}
+
+.footer-content-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #FFF;
+  font-size: 12px;
+  line-height: 30px;
+}
+
+.logo-white {
+  width: 20vh;
+  vertical-align: bottom;
+  opacity: 0.40;
+  font-size: 30px;
+  font-family: cursive,sans-serif;
+  margin-top: 10px;
+}
+
+
