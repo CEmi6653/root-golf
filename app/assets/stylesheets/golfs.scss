@@ -17,10 +17,120 @@ ul,li {
 }
 header{
   height: 100px;
-  background: green;
-  padding: 10px 0;
+  background: black;
+}
+
+
+
+#splash {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+  
+  background-image: image-url("golfswing-no1.png");
+  background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+	z-index: 9999999;
+	text-align:center;
+	color:#fff;
+  font-family: cursive,sans-serif,serif;
+}
+
+#splash-logo {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  font-size: 200px;
+}
+/*========= 画面遷移のためのCSS ===============*/
+
+/*画面遷移アニメーション*/
+.splashbg{
+    display: none;
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear .splashbg{
+    display: block;
+    content: "";
+    position:fixed;
+	z-index: 999;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+	left: 0;
+    transform: scaleX(0);
+    // background-color:cornflowerblue;/*伸びる背景色の設定*/
+    background-image: image-url("golf-page-image.png");
+    background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+	animation-name:PageAnime;
+	animation-duration:1.2s;
+	animation-timing-function:ease-in-out;
+	animation-fill-mode:forwards;
+}
+
+@keyframes PageAnime{
+	0% {
+		transform-origin:left;
+		transform:scaleX(0);
+	}
+	50% {
+		transform-origin:left;
+		transform:scaleX(1);
+	}
+	50.001% {
+		transform-origin:right;
+	}
+	100% {
+		transform-origin:right;
+		transform:scaleX(0);
+	}
+}
+
+/*画面遷移の後現れるコンテンツ設定*/
+#container{
+	opacity: 0;/*はじめは透過0に*/
+}
+
+/*bodyにappearクラスがついたら出現*/
+body.appear #container{
+	animation-name:PageAnimeAppear;
+	animation-duration:1s;
+	animation-delay: 0.8s;
+	animation-fill-mode:forwards;
+	opacity: 0;
+}
+
+@keyframes PageAnimeAppear{
+	0% {
+	opacity: 0;
+	}
+	100% {
+	opacity: 1;
+  }
+}
+
+html,body{
+	height: 100%;/*高さを100%にして描画エリアをとる*/
+}
+
+
+
+  
+
+
+.header-area{
   display: flex;
   align-items: center;
+  padding: 10px 0;
 }
 
 .heading{
@@ -42,12 +152,70 @@ header{
   display: flex;
   justify-content: space-around;
   color: white;
+  font-family: cursive,sans-serif,serif;
 }
 
 li {
   list-style: none;
 }
 
+
+/*====== 9-1-1 縦線が動いてスクロールを促す =======*/
+
+/*スクロールダウン全体の場所*/
+.scrolldown1{
+  /*描画位置※位置は適宜調整してください*/
+position:absolute;
+left:50%;
+bottom:10px;
+  /*全体の高さ*/
+height:50px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown1 span{
+  /*描画位置*/
+position: absolute;
+left:-15px;
+top: -15px;
+  /*テキストの形状*/
+color: #eee;
+font-size: 0.7rem;
+letter-spacing: 0.05em;
+}
+
+/* 線の描写 */
+.scrolldown1::after{
+content: "";
+  /*描画位置*/
+position: absolute;
+top: 0;
+  /*線の形状*/
+width: 1px;
+height: 30px;
+background: #eee;
+  /*線の動き1.4秒かけて動く。永遠にループ*/
+animation: pathmove 1.4s ease-in-out infinite;
+opacity:0;
+}
+
+/*高さ・位置・透過が変化して線が上から下に動く*/
+@keyframes pathmove{
+0%{
+  height:0;
+  top:0;
+  opacity: 0;
+}
+30%{
+  height:30px;
+  opacity: 1;
+}
+100%{
+  height:0;
+  top:50px;
+  opacity: 0;
+}
+}
 .contents {
  color: white;
 }
@@ -60,8 +228,7 @@ li {
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
+   
 }
 
 
@@ -91,8 +258,7 @@ li {
     background-position-x: center;
     background-position-y: center;
     background-repeat: no-repeat;
-    background-repeat-x: no-repeat;
-    background-repeat-y: no-repeat;
+    
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -129,7 +295,7 @@ font-family: cursive, sans-serif,serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  opacity: 0.50;
+  opacity: 0.70;
 }
 
 .golf-lists>.list {
@@ -186,13 +352,13 @@ font-family: cursive, sans-serif,serif;
 
 .tweet-btn {
   width: 120px;
-  background: grey;
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
   left: 32px;
   position: fixed;
   padding: 15px;
+  opacity: 0.7;
 }
 .tweet-btn-text {
   color: #fff;
@@ -222,7 +388,7 @@ font-family: cursive, sans-serif,serif;
   margin-bottom: 5vh;
 }
 
-.furima-details {
+.root-golf-details {
   margin: 0 4vw;
 }
 

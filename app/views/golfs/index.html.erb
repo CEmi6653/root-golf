@@ -1,26 +1,38 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <title>失敗しないゴルフ場選び</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
   </head>
   <body>
-    <header>
-      <div class="heading">
-        <h1 class="title">
-          <%= link_to 'RootGolf', "#" %>
-        </h1>
+      
+      <div id="splash">
+        <div id="splash-logo">looding</div>
+        <!--/splash-->
       </div>
-      <div class="navbar">
-        <ul class="nav-lists" >
-          <li><%= link_to '新規登録', "#" , class: "sing-up" %></li>
-          <li><%= link_to 'ログイン', "#", class: "login" %></li>
-          <li><%= link_to 'ログアウト', "#", class: "logout" %></li>
-        </ul>
-      </div>
-    </header>
-
+      <div class="splashbg"></div>
+    <div id="particles-js"></div> 
+    <div id="wrapper">
+      <header>
+      
+          <div class="header-area">
+            <div class="heading">
+              <h1 class="title">
+                <%= link_to 'RootGolf', "#", data: {"turbolinks" => false} %>
+              </h1>
+            </div>
+            <div class="navbar">
+              <ul class="nav-lists" >
+                <li><%= link_to 'sign up', "#" , class: "sing-up", data: {"turbolinks" => false} %></li>
+                <li><%= link_to 'Login', "#", class: "login", data: {"turbolinks" => false} %></li>
+                <li><%= link_to 'Log out', "#", class: "logout", data: {"turbolinks" => false} %></li>
+              </ul>
+            </div>
+          </div>
+      </header>
+    </div>
+    <div class="scrolldown1"><span>Scroll</span></div>
     <div class="contents">
       <div class="first-view">
         <div class="first-view-text">
@@ -43,7 +55,7 @@
        <ul class='golf-lists'>
            <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
           <li class='list'>
-            <%= link_to "#" do %>
+            <%= link_to "#", data: {"turbolinks" => false} do %>
               <div class='golf-img-content'>
                <%= image_tag "golf3.png", class: "golf-img" %>
               </div>
@@ -66,7 +78,7 @@
            <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
           <%# 商品がある場合は表示されないようにしましょう %>
           <li class='list'>
-            <%= link_to '#' do %>
+            <%= link_to '#' , data: {"turbolinks" => false} do %>
               <%= image_tag "advantage_inner_back.png", class: "golf-img" %>
               <div class='golf-info'>
                 <h4 class='golf-name'>
@@ -88,37 +100,37 @@
       </div>
       <%# /商品一覧 %>
     </div>
-    <%= link_to('#', class: 'tweet-btn') do %>
+    <%= link_to('#', class: 'tweet-btn', data: {"turbolinks" => false}) do %>
        <span class='tweet-btn-text'>登録する</span>
        <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "tweet-btn-icon" %>
     <% end %>
     <footer>
       <div class='footer'>
         <div class='footer-contents'>
-          <div class='furima-details'>
+          <div class='root-golf-details'>
             <h2 class='footer-content-head'>RootGolfについて</h2>
             <ul>
-              <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></li>
-              <li><%= link_to 'RootGolf利用規約', "#", class: "footer-link" %></li>
+              <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+              <li><%= link_to 'RootGolf利用規約', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
             </ul>
           </div>
-          <div class='furima-details'>
+          <div class='root-golf-details'>
             <h2 class='footer-content-head'>ゴルフ場を見る</h2>
             <ul>
-              <li><%= link_to 'ゴルフ場一覧', "#", class: "footer-link" %></li>
-              <li><%= link_to 'ゴルフ場検索', "#", class: "footer-link" %></li>
+              <li><%= link_to 'ゴルフ場一覧', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+              <li><%= link_to 'ゴルフ場検索', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
             </ul>
           </div>
-          <div class='furima-details'>
+          <div class='root-golf-details'>
             <h2 class='footer-content-head'>How to use</h2>
             <ul>
-              <li><%= link_to 'RootGolfガイド', "#", class: "footer-link" %></li>
-              <li><%= link_to 'お知らせ', "#", class: "footer-link" %></li>
+              <li><%= link_to 'RootGolfガイド', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+              <li><%= link_to 'お知らせ', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
             </ul>
           </div>
         </div>
-        <%= link_to 'Lets Golf', "#", class:"logo-white" %>
-       
+        <%= link_to 'Lets Golf', "#", class:"logo-white", data: {"turbolinks" => false} %>
+
       </div>
     </footer>
   </body>
