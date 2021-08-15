@@ -24,9 +24,14 @@
             </div>
             <div class="navbar">
               <ul class="nav-lists" >
-                <li><%= link_to 'sign up', "#" , class: "sing-up", data: {"turbolinks" => false} %></li>
-                <li><%= link_to 'Login', "#", class: "login", data: {"turbolinks" => false} %></li>
-                <li><%= link_to 'Log out', "#", class: "logout", data: {"turbolinks" => false} %></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to current_user.nickname, "#", class: "user-nickname", data: {"turbolinks" => false} %>
+                  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout" %></li>
+                  <li><%= link_to 'Edit', edit_user_path(current_user) %>
+                <% else %>
+                  <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
+                  <li><%= link_to 'sign up', new_user_registration_path, class: "sing-up" %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -51,7 +56,7 @@
         <div class="topic-content">
           <div class="page-description">
             <p>初心者、上級者、プロ</p>
-            <p>皆さんが選ぶ基準の割合がこちらになります</p>
+            <p>皆さんがコース選びの基準割合</p>
           </div>
         </div>
           <canvas id="myPieChart"></canvas>
@@ -81,7 +86,6 @@
             }
           });
           </script>
-       
       </div>
     
       <div class='golf-contents'>

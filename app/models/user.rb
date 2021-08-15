@@ -2,5 +2,23 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable       
+         :recoverable, :rememberable, :validatable    
+  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }
+  with_options presence:true do
+    validates :nickname
+    validates :play_style_id
+    validates :play_histry_id
+    validates :bith_place_id
+  end
+  with_options numericality: { other_than: 1, message: "can't be blank"} do
+    validates :play_style_id
+    validates :play_histry_id
+    validates :bith_place_id
+  end
+  
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :play_style
+  belongs_to :play_histry
+  belongs_to :bith_place
 end

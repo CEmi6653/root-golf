@@ -3,12 +3,13 @@
     <div class="heading">
       <h1 class="title">
         <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn'%>
       </h1>
     </div>
   </div>
 </header>
 <div class="form-area">
-    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+    <%= form_with model: current_user,  class: 'registration-main', local: true do |f| %>
     <div class='form-wrap'>
       <div class='form-header'>
         <h1 class='form-header-text'>
@@ -75,7 +76,7 @@
         </div>
       </div>
       <div class='register-btn'>
-        <%= f.submit "Sign up" ,class:"register-red-btn" %>
+        <%= f.submit "Update" ,class:"register-red-btn" %>
       </div>
     </div>
     <% end %>
@@ -83,4 +84,3 @@
 
 <div class="footer-support-area">
 </div>
-
