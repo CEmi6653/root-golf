@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit]
 
   def edit
-    
   end
   def update
     if current_user.update(user_params)
@@ -12,7 +12,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+
   def user_params
     params.require(:user).permit(:nickname, :email, :password, :play_histry_id, :bith_place_id, :play_style_id)
   end
+
 end
