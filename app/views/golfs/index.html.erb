@@ -5,17 +5,17 @@
     <title>失敗しないゴルフ場選び</title>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
   </head>
+  
   <body>
-      
-      <div id="splash">
-        <div id="splash-logo">looding</div>
+    
+    <div id="splash">
+      <div id="splash-logo">looding</div>
         <!--/splash-->
-      </div>
-      <div class="splashbg"></div>
+    </div>
+    <div class="splashbg"></div>
     <div id="particles-js"></div> 
-    <div id="wrapper">
+   <div id="wrapper">
       <header>
-      
           <div class="header-area">
             <div class="heading">
               <h1 class="title">
@@ -24,9 +24,14 @@
             </div>
             <div class="navbar">
               <ul class="nav-lists" >
-                <li><%= link_to 'sign up', "#" , class: "sing-up", data: {"turbolinks" => false} %></li>
-                <li><%= link_to 'Login', "#", class: "login", data: {"turbolinks" => false} %></li>
-                <li><%= link_to 'Log out', "#", class: "logout", data: {"turbolinks" => false} %></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to current_user.nickname, "#", class: "user-nickname", data: {"turbolinks" => false} %>
+                  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout", data: {"turbolinks" => false} %></li>
+                  <li><%= link_to 'Edit', edit_user_path(current_user) %>
+                <% else %>
+                  <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
+                  <li><%= link_to 'sign up', new_user_registration_path, class: "sing-up" %></li>
+                <% end %>
               </ul>
             </div>
           </div>
@@ -45,6 +50,42 @@
             <p>失敗しないコース選び</p>
             <p>あなたも共有しませんか</p>
         </div>
+      </div>
+      <div class="player-data-area">
+        
+        <div class="topic-content">
+          <div class="page-description">
+            <p>初心者、上級者、プロ</p>
+            <p>皆さんがコース選びの基準割合</p>
+          </div>
+        </div>
+          <canvas id="myPieChart"></canvas>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+
+          <script>
+          var ctx = document.getElementById("myPieChart");
+          var myPieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ["プレー環境", "料金", "移動時間", "難易度"],
+              datasets: [{
+                  backgroundColor: [
+                      "#BB5179",
+                      "#FAFF67",
+                      "#58A27C",
+                      "#3C00FF"
+                  ],
+                  data: [38, 31, 21, 10]
+              }]
+            },
+            options: {
+              title: {
+                display: true,
+                text: 'ユーザーが選ぶ基準'
+              }
+            }
+          });
+          </script>
       </div>
     
       <div class='golf-contents'>
@@ -98,7 +139,7 @@
           <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
         </ul>
       </div>
-      <%# /商品一覧 %>
+      <%# /ゴルフ場一覧 %>
     </div>
     <%= link_to('#', class: 'tweet-btn', data: {"turbolinks" => false}) do %>
        <span class='tweet-btn-text'>登録する</span>

@@ -1,0 +1,30 @@
+
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login-red-btn {
+  width: 100%;
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+  line-height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+  font-size: 30px;
+  font-family: cursive,sans-serif,serif;
+}
+
+.footer-support-area{
+  height: 100px;
+  background-color: black;
+}
