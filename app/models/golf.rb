@@ -1,5 +1,31 @@
 class Golf < ApplicationRecord
 
+  with_options presence: true do
+    validates :image
+    validates :golf_course_name, length: { maximum: 40 }
+    validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+    validates :bith_place_id
+    validates :municipalities
+    validates :address
+    validates :golf_course_number, format: {with: /\A\d{10,11}\z/}
+    validates :business_hours
+    validates :play_environment_id
+    validates :golf_course_difficult_id
+    validates :average_amount_id
+    validates :travel_time_id
+    validates :explanation, length: { maximum: 1000 }
+    validates :cart_information_id
+    validates :user_id
+  end
+  with_options numericality: { other_than: 1 , message: "can't be blank"} do
+    validates :bith_place_id
+    validates :play_environment_id
+    validates :golf_course_difficult_id
+    validates :average_amount_id
+    validates :travel_time_id
+    validates :cart_information_id
+  end
+
   belongs_to :user
   has_one_attached :image
 
