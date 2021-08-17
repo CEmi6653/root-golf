@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 2021_08_17_062201) do
     t.string "address", null: false
     t.string "golf_course_number", null: false
     t.string "business_hours", null: false
-    t.integer "average_amount", null: false
+    t.integer "play_environment_id", null: false
+    t.integer "golf_course_difficult_id", null: false
+    t.integer "average_amount_id", null: false
     t.integer "travel_time_id", null: false
     t.text "explanation", null: false
     t.integer "cart_information_id", null: false
