@@ -141,9 +141,11 @@
       </div>
       <%# /ゴルフ場一覧 %>
     </div>
-    <%= link_to('#', class: 'tweet-btn', data: {"turbolinks" => false}) do %>
-       <span class='tweet-btn-text'>登録する</span>
-       <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "tweet-btn-icon" %>
+    <% if user_signed_in? && current_user.admin? %>
+      <%= link_to new_admin_tweet_path, class: 'tweet-btn', data: {"turbolinks" => false} do %>
+        <span class='tweet-btn-text'>登録する</span>
+        <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "tweet-btn-icon" %>
+      <% end %>
     <% end %>
     <footer>
       <div class='footer'>

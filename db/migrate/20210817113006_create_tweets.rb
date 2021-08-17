@@ -1,6 +1,6 @@
-class CreateGolves < ActiveRecord::Migration[6.0]
+class CreateTweets < ActiveRecord::Migration[6.0]
   def change
-    create_table :golfs do |t|
+    create_table :tweets do |t|
       t.string   :golf_course_name,         null: false
       t.string   :postal_code,              null: false
       t.integer  :bith_place_id,            null: false

@@ -1,5 +1,4 @@
-class Golf < ApplicationRecord
-
+class Tweet < ApplicationRecord
   with_options presence: true do
     validates :image
     validates :golf_course_name, length: { maximum: 40 }
@@ -35,4 +34,6 @@ class Golf < ApplicationRecord
   belongs_to :golf_course_difficult
   belongs_to :play_environment
   belongs_to :travel_time
+
+  
 end

@@ -14,6 +14,6 @@ class AverageAmount < ActiveHash::Base
     { id: 12, name: '12000~14000円' },
   ]
  include ActiveHash::Associations
- has_many :users
+ has_many :tweets
 
 end

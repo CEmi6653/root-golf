@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :golf do
+  factory :tweet do
     
   end
 end
