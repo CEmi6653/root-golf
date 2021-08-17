@@ -17,7 +17,7 @@ class User < ApplicationRecord
     validates :play_histry_id
     validates :bith_place_id
   end
-  
+  has_many :golfs
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :play_style
