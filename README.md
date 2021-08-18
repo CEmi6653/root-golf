@@ -39,7 +39,7 @@
 | travel_time_id          | integer   | null: false       |
 | explanation             | integer   | null: false       |
 | cart_information_id     | integer   | null: false       |
-| user_id                 | reference | foreign_key: true |
+| user                    | reference | foreign_key: true |
 
 ### Association
 

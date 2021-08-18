@@ -52,6 +52,6 @@ class BithPlace < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :users
-  has_many :golfs
+  has_many :tweets
 
 end
