@@ -20,7 +20,7 @@
 }
 
 .golfs-tweet-main {
-  background-color: #FFF;
+  background-color:white;
   width: 70vw;
   min-width: 450px;
   padding: 10vh 15vw;
@@ -149,7 +149,7 @@
 }
 
 .sell-btn {
-  background: #ea352d;
+  background: rgb(140, 255, 140);
   border: 1px solid #ea352d;
   color: #fff;
   width: 100%;
