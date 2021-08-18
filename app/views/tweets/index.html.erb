@@ -67,7 +67,7 @@
           var myPieChart = new Chart(ctx, {
             type: 'pie',
             data: {
-              labels: ["プレー環境", "料金", "移動時間", "難易度"],
+              labels: ["プレー環境:38%", "料金:31%", "移動時間21%", "難易度:10%"],
               datasets: [{
                   backgroundColor: [
                       "#BB5179",
@@ -95,46 +95,50 @@
         </div>
        <ul class='golf-lists'>
            <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-          <li class='list'>
-            <%= link_to "#", data: {"turbolinks" => false} do %>
-              <div class='golf-img-content'>
-               <%= image_tag "golf3.png", class: "golf-img" %>
-              </div>
-              <div class='golf-info'>
-                <h4 class='golf-name'>
-                  <%= "コース名" %>
-                </h4>
-                <div class='golf-price'>
-                  <span><%= "8000~10000" %>円<br><%= 'ICから40分' %></span>
-                  <div class='star-btn'>
-                    <%= image_tag "旗.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
+          <% @tweets.each do |tweet| %>
+            <li class='list'>
+              <%= link_to tweet_path(tweet.id), data: {"turbolinks" => false} do %>
+                <div class='golf-img-content'>
+                <%= image_tag tweet.image, class: "golf-img" if tweet.image.attached? %>
+                </div>
+                <div class='golf-info'>
+                  <h4 class='golf-name'>
+                    <%= tweet.golf_course_name %>
+                  </h4>
+                  <div class='golf-price'>
+                    <span><%= tweet.average_amount.name %>円<br><%= tweet.cart_information.name %></span>
+                    <div class='star-btn'>
+                      <%= image_tag "旗.png", class:"star-icon" %>
+                      <span class='star-count'>0</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-          </li>
-          <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+              <% end %>
+            </li>
+          <% end %>
+            <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
-           <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
-          <%# 商品がある場合は表示されないようにしましょう %>
-          <li class='list'>
-            <%= link_to '#' , data: {"turbolinks" => false} do %>
-              <%= image_tag "advantage_inner_back.png", class: "golf-img" %>
-              <div class='golf-info'>
-                <h4 class='golf-name'>
-                  Course name
-                </h4>
-                <div class='golf-price'>
-                  <span>予約サイトの平均値段<br>ICからの移動時間</span>
-                  <div class='star-btn'>
-                    <%= image_tag "旗.png", class:"star-icon" %>
-                    <span class='star-count'>0</span>
+            <%# 商品がない場合は以下のダミー商品が表示されるようにしましょう %>
+            <%# 商品がある場合は表示されないようにしましょう %>
+          <% if @tweets[0] == nil %>
+            <li class='list'>
+              <%= link_to '#' , data: {"turbolinks" => false} do %>
+                <%= image_tag "advantage_inner_back.png", class: "golf-img" %>
+                <div class='golf-info'>
+                  <h4 class='golf-name'>
+                    Course name
+                  </h4>
+                  <div class='golf-price'>
+                    <span>予約サイトの平均値段<br>カート情報</span>
+                    <div class='star-btn'>
+                      <%= image_tag "旗.png", class:"star-icon" %>
+                      <span class='star-count'>0</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <% end %>
-          </li>
+              <% end %>
+            </li>
+          <% end %>
           <%# //商品がある場合は表示されないようにしましょう %>
           <%# //商品がない場合は以下のダミー商品が表示されるようにしましょう %>
         </ul>
