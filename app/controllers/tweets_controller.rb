@@ -7,6 +7,10 @@ class TweetsController < ApplicationController
     @tweets = Tweet.all
   end
 
+  def show
+    @tweet = Tweet.find(params[:id])   
+  end
+
   private
   def admin_check
     unless current_user.admin?
