@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
   resources :tweets, only: [:index, :show]
     namespace :admin do
-      resources :tweets, only: [:index, :new, :create, :show, :destroy]
+      resources :tweets
     end
 end
