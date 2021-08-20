@@ -98,6 +98,7 @@ http://18.180.41.245/
 
 -has_many: favorites
 -has_many: golfs, through: :favorites
+-has_many: golfs
 -has_many: reviews
 
 
@@ -122,6 +123,7 @@ http://18.180.41.245/
 
 ### Association
 
+belongs_to :user
 has_many: reviews
 has_many: favorites
 has_many: users, through: :favorites
