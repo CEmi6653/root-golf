@@ -18,6 +18,7 @@ class User < ApplicationRecord
     validates :bith_place_id
   end
   has_many :tweets
+  has_many :reviews
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :play_style
