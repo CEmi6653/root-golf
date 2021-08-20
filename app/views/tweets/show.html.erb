@@ -69,10 +69,10 @@
       </div>
       <% end %>
       <% if user_signed_in? %>
-        <% if current_user.id && @tweet.user.id %>
-          <%= link_to "ゴルフ場の編集", "#", method: :get, class: "golf-red-btn" %>
+        <% if current_user.admin? && @tweet.user.id %>
+          <%= link_to "ゴルフ場の編集", edit_admin_tweet_path, method: :get, class: "golf-red-btn" %>
           <p class="or-text">or</p>
-          <%= link_to "ゴルフ場の削除", "#", method: :delete, class:"golf-destroy" %>
+          <%= link_to "ゴルフ場の削除", admin_tweet_path(@tweet.id), method: :delete, class:"golf-destroy" %>
         <% end %>
       <% end %>
     </div>

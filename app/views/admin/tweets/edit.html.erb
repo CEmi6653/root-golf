@@ -1,0 +1,149 @@
+
+<div class="golfs-tweet-contents"> 
+  <div class="header-area">
+    <div class="heading">
+      <h1 class="title">
+        <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
+      </h1>
+    </div>
+  </div>
+  <div class="golfs-tweet-main">
+    <h2 class="golfs-tweet-title">ゴルフ場の情報を入力</h2>
+    <%= form_with model: @tweet, url: admin_tweet_path, method: :put, local: true do |f| %>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        ゴルフ場画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"golf-image" %>
+      </div>
+    </div>
+    
+    <div class="new-golfs">
+      <div class="weight-bold-text">
+        ゴルフ場名
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :golf_course_name, class:"golfs-text", id:"golf-name", placeholder:"ゴルフ場名（必須 40文字まで)", maxlength:"40" %>
+      <div class="golfs-explain">
+        <div class="weight-bold-text">
+          ゴルフ場の説明
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :explanation, class:"golfs-text", id:"golf-info", placeholder:"ゴルフ場の説明（必須 1,000文字まで）（風景、移動、風呂、コース全体レビュー、注意点など）例）コース毎の絶景、道中船移動あり、浴室施設やサウナ施設完備、カップ周りはアップダウンが多めでパターが苦戦しやすい、練習コースとしてはおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <%# /商品名と商品説明 %>
+
+
+    <%# ゴルフ場の住所入力 %>
+    <div class='golfs-address-form'>
+      <h1 class='info-input-haedline'>
+        ゴルフ場の住所入力
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">郵便番号</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :postal_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">都道府県</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:bith_place_id, BithPlace.all, :id, :name, {}, {class:"select-box", id:"bith-place"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">市区町村</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :municipalities, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">番地</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :address, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">電話番号</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :golf_course_number, class:"input-default", id:"phone-number", placeholder:"例）09012345678",maxlength:"11"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">営業時間</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :business_hours, class:"input-default", id:"phone-number", placeholder:"例）5:30~19:00",maxlength:"20"%>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">ゴルフ場のプレー環境</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:play_environment_id, PlayEnvironment.all, :id, :name, {}, {class:"select-box", id:"play-environment"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">全体的のコースの難易度</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:golf_course_difficult_id, GolfCourseDifficult.all, :id, :name, {}, {class:"select-box", id:"golf-course-difficult"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">予約サイトの平均金額</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:average_amount_id, AverageAmount.all, :id, :name, {}, {class:"select-box", id:"average-amount"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">最寄りICからの移動距離</label>
+          <span class="indispensable">必須</span>   
+        </div>
+        <%= f.collection_select(:travel_time_id, TravelTime.all , :id, :name, {}, {class:"select-box", id:"travel-time"}) %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">カート情報</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:cart_information_id, CartInformation.all, :id, :name, {}, {class:"select-box", id:"cart-information"}) %>
+      </div>
+    </div>
+    
+    <div class="sell-btn-contents">
+      <%= f.submit "投稿する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+   
+  </div>
+  <% end %>
+
+  <footer class="golfs-tweet-footer">
+    <ul class="menu">
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">利用規約</a></li>
+      <li><a href="#">特定商取引に関する表記</a></li>
+    </ul>
+    <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
+    <p class="inc">
+      ©︎RootGolf,Inc.
+    </p>
+  </footer>
+</div>

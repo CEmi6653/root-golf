@@ -1,7 +1,7 @@
 class Admin::TweetsController < ApplicationController
   before_action :authenticate_user!
   before_action :if_not_admin
-  before_action :set_tweet, only: [:show, :edit, :destroy]
+  before_action :set_tweet, only: [:show, :edit, :update, :destroy]
   
   def index
     @tweets = Tweet.all
@@ -18,6 +18,23 @@ class Admin::TweetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+  
+    if @tweet.update(tweet_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @tweet.destroy
+    redirect_to root_path
   end
 
   private

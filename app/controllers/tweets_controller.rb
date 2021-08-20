@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :admin_check, only: [:new, :create]
+  before_action :admin_check, only: [:new, :create, :edit, :update, :destroy]
 
 
   def index
