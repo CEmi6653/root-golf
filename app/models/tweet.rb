@@ -34,6 +34,7 @@ class Tweet < ApplicationRecord
   belongs_to :golf_course_difficult
   belongs_to :play_environment
   belongs_to :travel_time
+  belongs_to :bith_place
 
   
 end

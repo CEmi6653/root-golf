@@ -1,0 +1,189 @@
+<div class="whole-page">
+  <div class="header-area">
+    <div class="heading">
+      <h1 class="title">
+        <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
+      </h1>
+    </div>
+    <div class="navbar">
+      <ul class="nav-lists" >
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.nickname, "#", class: "user-nickname", data: {"turbolinks" => false} %>
+          <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout", data: {"turbolinks" => false} %></li>
+          <li><%= link_to 'Edit', edit_user_path(current_user) %>
+        <% else %>
+          <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
+          <li><%= link_to 'sign up', new_user_registration_path, class: "sing-up" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+
+  <%# 商品の概要 %>
+  <div class="golf-show">
+    <div class="golf-box">
+      
+      <div class="golf-img-content">
+        <%= image_tag @tweet.image ,class:"golf-box-img" if @tweet.image.attached? %>
+      </div>
+      <h2 class="name">
+        <%= @tweet.golf_course_name %>
+      </h2>
+      <div class="golf-information-area">
+        <ul class="information-golf-title"><span>info</span>
+          <li class="information-golf-text"><%= "〒#{@tweet.postal_code}" %></li>
+          <li class="information-golf-text"><%= "#{@tweet.bith_place.name}#{@tweet.municipalities}#{@tweet.address}" %></li>
+        </ul>
+        <ul class="information-golf-title">
+          <li class="information-golf-text"><%= "TEL #{@tweet.golf_course_number} 営業時間 #{@tweet.business_hours}" %></li>
+        </ul>
+      </div>
+      <div class="golf-explain-box">
+        <div class="golf-explain-title"><%= "ゴルフ場説明" %></div>
+        <span class="golf-explain-text"><%= @tweet.explanation %></span>
+      </div>
+      <div class="golf-play-information-box">
+        <div class="golf-explain-title"><%= "管理者から見た評価" %></div>
+        <span class="golf-play-information-text"><%= "プレー環境: #{@tweet.play_environment.name}" %></span>
+        <span class="golf-play-information-text"><%= "コース難易度: #{@tweet.golf_course_difficult.name}" %></span>
+      </div>
+      <div class="golf-play-information-box">
+        <div class="golf-explain-title">
+          <span class="golf-play-information-text"><%= "予約サイトの平均金額: #{@tweet.average_amount.name}" %></span>
+          <span class="golf-play-information-text"><%= "ICからの移動時間: #{@tweet.travel_time.name}" %></span>
+        </div>
+      </div>
+      <div class="golf-play-information-box">
+        <div class="golf-explain-title">
+          <span class="golf-play-information-text"><%= "カート情報: #{@tweet.cart_information.name}" %></span>
+          </div>
+      </div>
+
+      <% if user_signed_in? %>
+      <div class="option">
+        <div class="favorite-btn">
+          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
+          <span>お気に入り</span>
+        </div>
+      </div>
+      <% end %>
+      <% if user_signed_in? %>
+        <% if current_user.id && @tweet.user.id %>
+          <%= link_to "ゴルフ場の編集", "#", method: :get, class: "golf-red-btn" %>
+          <p class="or-text">or</p>
+          <%= link_to "ゴルフ場の削除", "#", method: :delete, class:"golf-destroy" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="show-image-area">
+      <div class="inner">
+        <h1 class="page-heading">記事一覧</h1>
+        <div class="card__wrapper">
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./images/image.png" alt="" class="card__img" />
+            <div class="card__body">
+              <h2 class="card__title">記事タイトルが入ります</h2>
+              <p class="card__summary">
+                記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="comment-area">
+    <%# /商品の概要 %>
+    <% if user_signed_in? %>
+    <div class="comment-box">
+      <form>
+        <textarea class="comment-text"></textarea>
+        <p class="comment-warn">
+          相手のことを考え丁寧なコメントを心がけましょう。
+          <br>
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        </p>
+        <button type="submit" class="comment-btn">
+          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+          <span>コメントする<span>
+        </button>
+      </form>
+    </div>
+    <% end %>
+  </div>
+  
+  <div class='footer'>
+    <div class='footer-contents'>
+      <div class='root-golf-details'>
+        <h2 class='footer-content-head'>RootGolfについて</h2>
+        <ul>
+          <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+          <li><%= link_to 'RootGolf利用規約', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+        </ul>
+      </div>
+      <div class='root-golf-details'>
+        <h2 class='footer-content-head'>ゴルフ場を見る</h2>
+        <ul>
+          <li><%= link_to 'ゴルフ場一覧', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+          <li><%= link_to 'ゴルフ場検索', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+        </ul>
+      </div>
+      <div class='root-golf-details'>
+        <h2 class='footer-content-head'>How to use</h2>
+        <ul>
+          <li><%= link_to 'RootGolfガイド', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+          <li><%= link_to 'お知らせ', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
+        </ul>
+      </div>
+    </div>
+    <%= link_to 'Lets Golf', "#", class:"logo-white", data: {"turbolinks" => false} %>
+
+  </div>
+</div>
