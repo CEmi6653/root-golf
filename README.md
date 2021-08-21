@@ -97,8 +97,8 @@ http://18.180.41.245/
 
 
 -has_many: favorites
--has_many: golfs, through: :favorites
--has_many: golfs
+-has_many: tweets, through: :favorites
+-has_many: tweet
 -has_many: reviews
 
 
@@ -140,7 +140,7 @@ has_many: users, through: :favorites
 ### Association
 
 belongs_to: user
-belongs_to: golf
+belongs_to: tweet
 
 
 ## reviewテーブル
@@ -157,7 +157,7 @@ belongs_to: golf
 ### Association
 
 belongs_to: user
-belongs_to: golf
+belongs_to: tweet
 
 
 # ローカルでの動作方法
