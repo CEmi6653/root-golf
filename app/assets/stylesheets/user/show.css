@@ -1,0 +1,27 @@
+
+
+.user-wrapper{
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(236, 227, 189);
+}
+
+.page-heading{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.user-information-area{
+  width: 100vw;
+  text-align: center;
+}
+
+.information-user-title{
+  font-size: 2rem;
+}
+
+.information-user-text{
+  display: inline;
+  font-size:large;
+  color: rgb(196, 128, 104);
+}

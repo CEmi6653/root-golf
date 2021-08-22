@@ -19,6 +19,3 @@ $(window).on('load',function(){
   });
 
 
-  
-
-

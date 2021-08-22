@@ -25,7 +25,7 @@
             <div class="navbar">
               <ul class="nav-lists" >
                 <% if user_signed_in? %>
-                  <li><%= link_to current_user.nickname, "#", class: "user-nickname", data: {"turbolinks" => false} %>
+                  <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname", data: {"turbolinks" => false} %>
                   <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout", data: {"turbolinks" => false} %></li>
                   <li><%= link_to 'Edit', edit_user_path(current_user) %>
                 <% else %>
