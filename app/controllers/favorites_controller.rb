@@ -13,9 +13,9 @@ class FavoritesController < ApplicationController
    def destroy
      user = current_user
      tweet = Tweet.find(params[:tweet_id])
-     if favorite = Favorite.find_by(user_id: user.id, tweet_id: tweet_id)
+     if favorite = Favorite.find_by(user_id: user.id, tweet_id: tweet.id)
       favorite.delete
-      redirect_to users_path(current_user)
+      redirect_to tweet
      else
       redirect_to root_url
      end
