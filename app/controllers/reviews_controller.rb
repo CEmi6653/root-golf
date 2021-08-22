@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
     @tweet = Tweet.find(params[:tweet_id])
     review = @tweet.reviews.find(params[:id])
     if review.destroy
-      redirect_to root_path
+      redirect_to tweet_path(review.tweet.id)
     else
       render "tweet/show"
     end
