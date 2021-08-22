@@ -70,7 +70,7 @@
       <% end %>
       <% if user_signed_in? %>
         <% if current_user.admin? && @tweet.user.id %>
-          <%= link_to "ゴルフ場の編集", edit_admin_tweet_path, method: :get, class: "golf-red-btn" %>
+          <%= link_to "ゴルフ場の編集", edit_admin_tweet_path(@tweet.id), method: :get, class: "golf-red-btn" %>
           <p class="or-text">or</p>
           <%= link_to "ゴルフ場の削除", admin_tweet_path(@tweet.id), method: :delete, class:"golf-destroy" %>
         <% end %>
@@ -139,24 +139,39 @@
       </div>
   </div>
 
-  <div class="comment-area">
+  <div class="comment-field-area">
     <%# /商品の概要 %>
     <% if user_signed_in? %>
-    <div class="comment-box">
-      <form>
-        <textarea class="comment-text"></textarea>
-        <p class="comment-warn">
-          相手のことを考え丁寧なコメントを心がけましょう。
-          <br>
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
-        </p>
-        <button type="submit" class="comment-btn">
-          <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-          <span>コメントする<span>
-        </button>
-      </form>
-    </div>
+      <%= form_with model: [@tweet, @review], url: tweet_reviews_path(current_user.id), local: true do |form| %>
+          <div class="comment-box">
+            <%= form.text_area :content, class:"comment-text", id:"golf-info", placeholder:"経験談をレビューする" ,rows:"7" ,maxlength:"1000" %>
+            <p class="comment-warn">
+              相手のことを考え丁寧なコメントを心がけましょう。
+              <br>
+              不快な言葉遣いなどは利用制限や退会処分となることがあります。
+            </p>
+            <%= form.submit "SEND" ,class:"comment-btn" %>
+          </div>
+        <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
+  </div>
+  <div class="comment-field">
+      <div class="comments">
+        <h4>＜コメント一覧＞</h4>
+        <% @reviews.each do |review| %>
+          <p>
+            <strong><%= link_to review.user.nickname, "#" %>：</strong>
+            <%= review.content %>
+            <% if user_signed_in? %>
+              <% if current_user.admin? && @tweet.user.id %>
+                <%= link_to "削除", tweet_review_path(@tweet,review.id),  method: :delete, class:"comment-destroy", data: {"turbolinks" => false} %></td>
+              <% end %>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
   </div>
   
   <div class='footer'>

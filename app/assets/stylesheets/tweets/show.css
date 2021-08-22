@@ -183,13 +183,14 @@
 }
 /* /商品の概要 */
 
-.comment-area{
+.comment-field-area{
  display: flex;
  justify-content: center;
+ align-items: center;
 }
 
 .comment-box {
-  width: 40vw;
+  width: 30vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
@@ -222,14 +223,16 @@
   margin-bottom: 2vh;
 }
 
-.comment-flag {
+.comment-field{
   display: flex;
   justify-content: center;
+  align-items: center;
+  color: #2d2d2d;
+}
+.comments{
+  text-align: center;
 }
 
-.comment-flag-icon {
-  margin: 10px 5px 0 0;
-}
 
 
 

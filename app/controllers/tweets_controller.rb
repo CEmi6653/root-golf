@@ -9,6 +9,8 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])   
+    @review = Review.new
+    @reviews = @tweet.reviews.includes(:user)
   end
 
   private
