@@ -34,12 +34,14 @@ ActiveRecord::Schema.define(version: 2021_08_20_100956) do
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "tweet_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "tweet_id", null: false
     t.float "rate"
     t.text "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["tweet_id"], name: "index_reviews_on_tweet_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,5 +82,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_100956) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reviews", "tweets"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tweets", "users"
 end

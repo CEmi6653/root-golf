@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "tweets#index"
   resources :users, only: [:edit, :update]
   resources :tweets, only: [:index, :show] do
-    resources :reviews, only: :create
+    resources :reviews, only: [:create, :destroy]
   end
     namespace :admin do
       resources :tweets

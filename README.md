@@ -133,8 +133,8 @@ has_many: users, through: :favorites
 
 | Column                  | Type       | Options                         |
 |-------------------------|------------|---------------------------------|
-| user_id                 | references | null: false , foreign_key: true |
-| golf_id                 | references | null: false , foreign_key: true |
+| user                    | references | null: false , foreign_key: true |
+| golf                    | references | null: false , foreign_key: true |
 
 
 ### Association
@@ -145,13 +145,12 @@ belongs_to: tweet
 
 ## reviewテーブル
 
-| Column                  | Type       | Options                         |
-|-------------------------|------------|---------------------------------|
-| user_id                 | integer    | null: false                     |
-| golf_id                 | integer    | null: false                     |
-| play_style              | integer    |                                 |
-| rate                    | float      |                                 | 
-| content                 | text       | null: false                     |
+| Column                  | Type          | Options                         |
+|-------------------------|---------------|---------------------------------|
+| user                    | references    | null: false foreign_key:true    |
+| tweet                   | references    | null: false foreign_key:true    |
+| rate                    | float         |                                 | 
+| content                 | text          | null: false                     |
 
 
 ### Association

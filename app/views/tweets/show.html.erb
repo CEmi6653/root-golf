@@ -164,6 +164,11 @@
           <p>
             <strong><%= link_to review.user.nickname, "#" %>：</strong>
             <%= review.content %>
+            <% if user_signed_in? %>
+              <% if current_user.admin? && @tweet.user.id %>
+                <%= link_to "削除", tweet_review_path(@tweet,review.id),  method: :delete, class:"comment-destroy", data: {"turbolinks" => false} %></td>
+              <% end %>
+            <% end %>
           </p>
         <% end %>
       </div>

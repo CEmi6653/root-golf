@@ -3,9 +3,18 @@ class ReviewsController < ApplicationController
 
   def create
     if review = Review.create(review_params)
+      redirect_to tweet_path(review.tweet.id)
+    else
+      render "tweets/show"
+    end
+  end
+  def destroy
+    @tweet = Tweet.find(params[:tweet_id])
+    review = @tweet.reviews.find(params[:id])
+    if review.destroy
       redirect_to root_path
     else
-      render :show
+      render "tweet/show"
     end
   end
 
