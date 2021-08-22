@@ -19,7 +19,7 @@ class User < ApplicationRecord
   end
   has_many :tweets
   has_many :reviews
-
+  has_many :tweets, through: :favorites
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :play_style
   belongs_to :play_histry
