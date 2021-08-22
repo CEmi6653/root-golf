@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_08_20_100956) do
     t.bigint "user_id", null: false
     t.bigint "tweet_id", null: false
     t.float "rate"
-    t.text "content", null: false
+    t.string "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["tweet_id"], name: "index_reviews_on_tweet_id"

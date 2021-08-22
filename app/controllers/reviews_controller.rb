@@ -2,10 +2,14 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    if review = Review.create(review_params)
-      redirect_to tweet_path(review.tweet.id)
+    tweet = Tweet.find(params[:tweet_id])
+    @review = tweet.reviews.build(review_params)
+    @review.user_id = current_user.id
+    if @review.save
+      redirect_back(fallback_location: root_path)
     else
-      render "tweets/show"
+      flash[:success] = "コメントできませんでした"
+      redirect_back(fallback_location: root_path)
     end
   end
   def destroy
@@ -20,6 +24,6 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:content, :rate).merge(user_id: current_user.id, tweet_id: params[:tweet_id])
+    params.require(:review).permit(:content, :rate)
   end
 end

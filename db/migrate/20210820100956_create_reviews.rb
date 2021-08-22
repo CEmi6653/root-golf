@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :tweet, null: false, foreign_key: true
       t.float :rate
-      t.text :content, null: false
+      t.string :content, null: false
       t.timestamps
     end
   end
