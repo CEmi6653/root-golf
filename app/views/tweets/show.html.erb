@@ -63,8 +63,11 @@
       <% if user_signed_in? %>
       <div class="option">
         <div class="favorite-btn">
-          <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-          <span>お気に入り</span>
+          <% if !Favorite.exists?(user_id: current_user.id,tweet_id: @tweet.id) %>
+          <%= link_to "お気に入り",tweet_add_path(@tweet),method: :post %>
+          <% else %>
+          <%= link_to "お気に入り解除",tweet_add_path(@tweet),method: :delete %>
+          <% end %>
         </div>
       </div>
       <% end %>

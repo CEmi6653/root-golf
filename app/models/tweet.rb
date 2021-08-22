@@ -28,6 +28,7 @@ class Tweet < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :reviews, dependent: :destroy
+  has_many :users, through: :favorites
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :average_amount
