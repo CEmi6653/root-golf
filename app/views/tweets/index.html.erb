@@ -1,13 +1,6 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-  <head>
-    <meta charset="UTF-8">
-    <title>失敗しないゴルフ場選び</title>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-  </head>
+
   
   <body>
-    
     <div id="splash">
       <div id="splash-logo">looding</div>
         <!--/splash-->
@@ -15,27 +8,7 @@
     <div class="splashbg"></div>
     <div id="particles-js"></div> 
    <div id="wrapper">
-      <header>
-          <div class="header-area">
-            <div class="heading">
-              <h1 class="title">
-                <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
-              </h1>
-            </div>
-            <div class="navbar">
-              <ul class="nav-lists" >
-                <% if user_signed_in? %>
-                  <li><%= link_to current_user.nickname, user_path(current_user.id), class: "user-nickname", data: {"turbolinks" => false} %>
-                  <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout", data: {"turbolinks" => false} %></li>
-                  <li><%= link_to 'Edit', edit_user_path(current_user) %>
-                <% else %>
-                  <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
-                  <li><%= link_to 'sign up', new_user_registration_path, class: "sing-up" %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-      </header>
+      <%= render partial: "shared/header"  %>
     </div>
     <div class="scrolldown1"><span>Scroll</span></div>
     <div class="contents">
@@ -146,34 +119,5 @@
         <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "tweet-btn-icon" %>
       <% end %>
     <% end %>
-    <footer>
-      <div class='footer'>
-        <div class='footer-contents'>
-          <div class='root-golf-details'>
-            <h2 class='footer-content-head'>RootGolfについて</h2>
-            <ul>
-              <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-              <li><%= link_to 'RootGolf利用規約', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            </ul>
-          </div>
-          <div class='root-golf-details'>
-            <h2 class='footer-content-head'>ゴルフ場を見る</h2>
-            <ul>
-              <li><%= link_to 'ゴルフ場一覧', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-              <li><%= link_to 'ゴルフ場検索', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            </ul>
-          </div>
-          <div class='root-golf-details'>
-            <h2 class='footer-content-head'>How to use</h2>
-            <ul>
-              <li><%= link_to 'RootGolfガイド', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-              <li><%= link_to 'お知らせ', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            </ul>
-          </div>
-        </div>
-        <%= link_to 'Lets Golf', "#", class:"logo-white", data: {"turbolinks" => false} %>
-
-      </div>
-    </footer>
+    <%= render partial: "shared/footer" %>
   </body>
-</html>

@@ -1,24 +1,5 @@
+<%= render partial: "shared/third-header" %>
 <div class="mipage-area">
-  <header>
-    <div class="header-area">
-      <div class="heading">
-        <h1 class="title">
-          <%= link_to 'RootGolf', root_path, data: {"turbolinks" => false} %>
-        </h1>
-      </div>
-      <div class="navbar">
-        <ul class="nav-lists" >
-          <% if user_signed_in? %>
-            <li><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "logout", data: {"turbolinks" => false} %></li>
-            <li><%= link_to 'Edit', edit_user_path(current_user) %>
-          <% else %>
-            <li><%= link_to 'Login', new_user_session_path, class: "login" %></li>
-            <li><%= link_to 'sign up', new_user_registration_path, class: "sing-up" %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </header>
   <div class="user-wrapper">
     <h2 class="page-heading">
       <%= "#{@user.nickname}さんの情報"%>
@@ -36,33 +17,5 @@
     </h2>
   </div>
 
-  <footer>
-    <div class='footer'>
-      <div class='footer-contents'>
-        <div class='root-golf-details'>
-          <h2 class='footer-content-head'>RootGolfについて</h2>
-          <ul>
-            <li><%= link_to 'プライバシーポリシー', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            <li><%= link_to 'RootGolf利用規約', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-          </ul>
-        </div>
-        <div class='root-golf-details'>
-          <h2 class='footer-content-head'>ゴルフ場を見る</h2>
-          <ul>
-            <li><%= link_to 'ゴルフ場一覧', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            <li><%= link_to 'ゴルフ場検索', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-          </ul>
-        </div>
-        <div class='root-golf-details'>
-          <h2 class='footer-content-head'>How to use</h2>
-          <ul>
-            <li><%= link_to 'RootGolfガイド', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-            <li><%= link_to 'お知らせ', "#", class: "footer-link", data: {"turbolinks" => false} %></li>
-          </ul>
-        </div>
-      </div>
-      <%= link_to 'Lets Golf', "#", class:"logo-white", data: {"turbolinks" => false} %>
-
-    </div>
-  </footer>
+  <%= render partial: "shared/footer" %>
 </div>      
