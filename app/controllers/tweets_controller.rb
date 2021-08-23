@@ -1,10 +1,12 @@
 class TweetsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :admin_check, only: [:new, :create, :edit, :update, :destroy]
-
+  before_action :set_q, only: [:index, :search]
 
   def index
     @tweets = Tweet.all
+    set_tweet_column 
+    
   end
 
   def show
@@ -14,7 +16,7 @@ class TweetsController < ApplicationController
   end
 
   def search
-    @tweets = Tweet.search(params[:keyword])
+    @results = @q.result.includes(:golf_course_name) 
   end
 
   private
@@ -23,5 +25,14 @@ class TweetsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def set_q
+    @q = Tweet.ransack(params[:q])  # 検索オブジェクトを生成
+  end
+
+  def set_tweet_column
+    @tweet_name = Tweet.select("golf_course_name").distinct  # 重複なくnameカラムのデータを取り出す
+  end
+ 
 
 end
