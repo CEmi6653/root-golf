@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @tweet = @user.tweets
+    @tweet = @user.tweets.order(created_at: "DESC")
     @nickname = @user.nickname
     redirect_to root_path unless current_user.id == @user.id
   end
