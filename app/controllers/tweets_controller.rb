@@ -13,6 +13,10 @@ class TweetsController < ApplicationController
     @reviews = @tweet.reviews.includes(:user).order(created_at: :desc)
   end
 
+  def search
+    @tweets = Tweet.search(params[:keyword])
+  end
+
   private
   def admin_check
     unless current_user.admin?
