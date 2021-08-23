@@ -17,6 +17,8 @@ class User < ApplicationRecord
     validates :play_histry_id
     validates :bith_place_id
   end
+
+  has_many :favorites
   has_many :tweets
   has_many :reviews
   has_many :tweets, through: :favorites
