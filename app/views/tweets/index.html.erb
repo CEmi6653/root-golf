@@ -14,14 +14,12 @@
     <div class="contents">
       <div class="first-view">
         <div class="first-view-text">
-          <%= search_form_for @q, url: search_tweets_path do |f| %>
-          <%= f.text_field :golf_course_name_cont, class: "search-form", placeholder: "ゴルフ場検索" %>
-          <%= f.label :golf_course_name_eq, '商品名' %>
-          <%= f.collection_select :golf_course_name_eq, @tweets, :golf_course_name, :golf_course_name,  include_blank: '指定なし' %> 
-          <%= f.submit '検索', class: "search-btn" %>
-          <% end %>
+        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "ゴルフ場名で検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
         </div>
-           <%# トップページの背景画像 %>
+          <%# トップページの背景画像 %>
       </div>
       <div class="topic-content">
         <div class="page-description">

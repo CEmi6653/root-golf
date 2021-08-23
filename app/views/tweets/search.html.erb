@@ -5,23 +5,28 @@
       <%= form.text_field :keyword, placeholder: "ゴルフ場名で検索する", class: "search-input" %>
       <%= form.submit "検索", class: "search-btn" %>
     <% end %>
-    <h1>
-      検索結果
-   </h1>
-<%# 検索結果の個数で条件分岐 %>
-  <% if @results.length !=0 %>
-    <% @results.each do |result| %>
-      <br>
-      <li>
-        <%= result.golf_course_name %>
-        
+  <ul class='golf-lists'>
+    <% @tweets.each do |tweet| %>
+      <li class='list'>
+        <%= link_to tweet_path(tweet.id), data: {"turbolinks" => false} do %>
+          <div class='golf-img-content'>
+          <%= image_tag tweet.image, class: "golf-img" if tweet.image.attached? %>
+          </div>
+          <div class='golf-info'>
+            <h4 class='golf-name'>
+              <%= tweet.golf_course_name %>
+            </h4>
+            <div class='golf-price'>
+              <span><%= tweet.average_amount.name %><br><%= tweet.cart_information.name %></span>
+              <div class='star-btn'>
+                <%= image_tag "旗.png", class:"star-icon" %>
+                <span class='star-count'>0</span>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </li>
     <% end %>
-  <% else %>
-    該当する商品はありません
-  <% end %>
-<br>
-  
       
     <% if @tweets[0] == nil %>
      <h3 class='search-title'>Could not search</h3>
