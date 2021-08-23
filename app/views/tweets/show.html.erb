@@ -54,9 +54,9 @@
       <% end %>
       <% if user_signed_in? %>
         <% if current_user.admin? && @tweet.user.id %>
-          <%= link_to "ゴルフ場の編集", edit_admin_tweet_path, method: :get, class: "golf-red-btn" %>
+          <%= link_to "golf edit", edit_admin_tweet_path, method: :get, class: "golf-red-btn" %>
           <p class="or-text">or</p>
-          <%= link_to "ゴルフ場の削除", admin_tweet_path(@tweet.id), method: :delete, class:"golf-destroy" %>
+          <%= link_to "golf delete", admin_tweet_path(@tweet.id), method: :delete, class:"golf-destroy" %>
         <% end %>
       <% end %>
     </div>
@@ -126,15 +126,15 @@
   <div class="comment-field-area">
     <%# /商品の概要 %>
     <% if user_signed_in? %>
-      <%= form_with(model: [@tweet, @review], local: true) do |form| %>
+      <%= form_with(model: [@tweet, @review], local: true) do |f| %>
         <div class="comment-box">
-          <%= form.text_area :content, class:"comment-text", id:"golf-info", placeholder:"経験談をレビューする" ,rows:"7" ,maxlength:"1000" %>
+          <%= f.text_area :content, class:"comment-text", id:"golf-info", placeholder:"経験談をレビューする" ,rows:"7" ,maxlength:"1000" %>
           <p class="comment-warn">
             相手のことを考え丁寧なコメントを心がけましょう。
             <br>
             不快な言葉遣いなどは利用制限や退会処分となることがあります。
           </p>
-          <%= form.submit "SEND" ,class:"comment-btn" %>
+          <%= f.submit "SEND" ,class:"comment-btn" %>
           </div>
       <% end %>
     <% else %>
@@ -143,10 +143,11 @@
   </div>
 
   <div class="comment-field">
+  
     <div class="comments">
       <h4>＜コメント一覧＞</h4>
+      <div class="comment-room">
       <% @reviews.each do |review| %>
-        <p>
           <strong><%=  review.user.nickname %>：</strong>
           <%= review.content %>
           <% if user_signed_in? %>
@@ -156,6 +157,7 @@
           <% end %>
         </p>
       <% end %>
+      </div>
     </div>
   </div>
   

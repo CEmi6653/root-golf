@@ -4,9 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
-  /* z-index: 1;
-  position: fixed; */
+ 
 }
 
 
@@ -28,7 +26,7 @@
 }
 
 .golf-box-img {
-  height: 50vh;
+  height: 100vh;
   width: 100vw;
   min-height: 500px;
   
@@ -41,6 +39,7 @@
 
 .information-golf-title{
   font-size: 2rem;
+  color: rgb(69, 115, 1);
 }
 
 .information-golf-text{
@@ -53,6 +52,7 @@
   padding-bottom: 5%;
   font-size: xx-large;
   text-align: center;
+  color: rgb(69, 115, 1);
 }
 
 .golf-explain-text{
@@ -73,11 +73,12 @@
 .golf-red-btn {
   text-align: center;
   background-color: #ea352d;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color: #FFF;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1.5vh 5vw;
+  border-radius: 40px;
 }
 
 .or-text {
@@ -87,10 +88,11 @@
 .golf-destroy {
   background-color: lightgray;
   text-align: center;
-  font-size: 24px;
+  font-size: 18px;
   color: black;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 1.5vh 5vw;
+  border-radius: 40px;
 }
 
 .golf-explain-box {
@@ -105,7 +107,6 @@
 .option {
   display: flex;
   justify-content: space-between;
-  /* position: relative; */
 }
 
 .favorite-btn {
@@ -142,9 +143,7 @@
   margin-right: 5px;
 }
 
-/* .show-image-area {
-  width: 100vw;
-} */
+
 .inner {
   width: 1024px;
   margin: 0 auto;
@@ -185,7 +184,7 @@
 }
 
 .comment-box {
-  width: 30vw;
+  width: 50vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
@@ -197,6 +196,7 @@
   padding: 10px;
   border: solid 2px #dedede;
   resize: none;
+  font-size: 20px;
 }
 
 .comment-warn {
@@ -226,8 +226,20 @@
 }
 .comments{
   text-align: center;
+  padding: 10px;
+  color: rgb(69, 115, 1);
 }
 
+.comment-room{
+  border: #2d2d2d solid 1px;
+  padding: 10px 0;
+  font-size: 20px;
+  width: 80vw;
+  height:25vh;
+  background-color:gray ;
+  color: white;
+  overflow:scroll;
+}
 
 
 

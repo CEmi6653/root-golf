@@ -98,7 +98,7 @@ http://18.180.41.245/
 
 -has_many: favorites
 -has_many: tweets, through: :favorites
--has_many: tweet
+-has_many: tweets
 -has_many: reviews
 
 
