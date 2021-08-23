@@ -14,6 +14,10 @@
     <div class="contents">
       <div class="first-view">
         <div class="first-view-text">
+        <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "ゴルフ場名で検索する", class: "search-input" %>
+        <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
         </div>
           <%# トップページの背景画像 %>
       </div>
@@ -66,7 +70,7 @@
         <div class="subtitle" >
           Select a golf course
         </div>
-       <ul class='golf-lists'>
+        <ul class='golf-lists'>
            <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
           <% @tweets.each do |tweet| %>
             <li class='list'>
@@ -109,7 +113,7 @@
               <% end %>
             </li>
           <% end %>
-          
+        </ul>
       </div>
       <%# /ゴルフ場一覧 %>
     </div>

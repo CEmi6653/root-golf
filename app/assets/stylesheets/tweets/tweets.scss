@@ -233,8 +233,13 @@ opacity:0;
     background-repeat: no-repeat;
    
 }
-
-
+.first-view-text{
+  display: flex;
+  justify-content: center;
+  padding-top: 5vh;
+  
+ 
+}
 .topic-content {
   height: 200px;
   background-color:white;
@@ -314,8 +319,8 @@ font-family: cursive, sans-serif,serif;
 }
 
 .golf-img {
-  width: 33vh;
-  height: 33vh;
+  width: 25vh;
+  height: 25vh;
 }
 
 

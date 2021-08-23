@@ -38,5 +38,14 @@ class Tweet < ApplicationRecord
   belongs_to :travel_time
   belongs_to :bith_place
 
+  def self.search(search)
+    if search != ""
+      Tweet.where('golf_course_name LIKE(?)', "%#{search}")
+    else
+      Tweet.all
+    end
+    
+  end
+
   
 end

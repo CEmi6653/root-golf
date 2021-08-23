@@ -1,0 +1,22 @@
+.search-title{
+  font-size: 100px;
+  text-align: center;
+  color: white;
+  font-family: cursive, sans-serif, serif;
+}
+.search-form{
+  color: white;
+}
+
+.search-input{
+  font-size: smaller;
+  background-color:white;
+  opacity: 0.2;
+  margin-right: 10px;
+  
+}
+
+.search-btn{
+  border: white 1px solid;
+  opacity: 0.5;
+}

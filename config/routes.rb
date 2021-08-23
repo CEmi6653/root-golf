@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root to: "tweets#index"
   resources :users, only: [:show, :edit, :update]
   resources :tweets, only: [:index, :show] do
+    collection do
+      get 'search'
+    end
     resources :reviews, only: [:create, :destroy]
     post 'add' => 'favorites#create'
     delete '/add' => 'favorites#destroy'
