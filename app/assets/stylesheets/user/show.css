@@ -3,8 +3,10 @@
 
 
 .page-heading{
+  font-size: 4rem ;
   text-align: center;
   padding-top: 20px;
+  color:rgb(69, 115, 1);
 }
 
 .user-information-area{
@@ -13,12 +15,13 @@
 }
 
 .information-user-title{
-  font-size: 2rem;
+  font-size: 4rem;
+  color: rgb(69, 115, 1);
 }
 
 .information-user-text{
   display: inline;
-  font-size:large;
+  font-size:3rem;
   color: rgb(196, 128, 104);
 }
 .admin-comment-field{
