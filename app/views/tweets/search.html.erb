@@ -10,7 +10,7 @@
       <li class='list'>
         <%= link_to tweet_path(tweet.id), data: {"turbolinks" => false} do %>
           <div class='golf-img-content'>
-          <%= image_tag tweet.image, class: "golf-img" if tweet.image.attached? %>
+          <%= image_tag tweet.images, class: "golf-img" if tweet.images.attached? %>
           </div>
           <div class='golf-info'>
             <h4 class='golf-name'>

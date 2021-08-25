@@ -6,7 +6,7 @@
       <div class="golf-box">
         
         <div class="golf-img-content">
-          <%= image_tag @tweet.image ,class:"golf-box-img" if @tweet.image.attached? %>
+          <%= image_tag @tweet.images[0] ,class:"golf-box-img" if @tweet.images.attached? %>
         </div>
         <h2 class="name">
           <%= @tweet.golf_course_name %>
@@ -63,68 +63,18 @@
         <% end %>
       </div>
     </div>
-    <div class="show-image-area">
-        <div class="inner">
-          <h1 class="page-heading">記事一覧</h1>
-          <div class="card__wrapper">
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-            <div class="card">
-              <img src="./images/image.png" alt="" class="card__img" />
-              <div class="card__body">
-                <h2 class="card__title">記事タイトルが入ります</h2>
-                <p class="card__summary">
-                  記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。記事の要約が入ります。
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
 
+    <%# 保存したゴルフ場の画像を表示できるようにしよう %>
+    <div class="article">
+      <% if @tweet.images.attached? %>
+        <div class="article_images">
+          <% @tweet.images.each do |image| %>
+            <%= image_tag image, class:"golf-img" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%# 保存したゴルフ場の画像を表示できるようにしよう %>
     <div class="comment-field-area">
       <%# /商品の概要 %>
       <% if user_signed_in? %>

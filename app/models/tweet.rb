@@ -1,6 +1,6 @@
 class Tweet < ApplicationRecord
   with_options presence: true do
-    validates :image
+    validates :images
     validates :golf_course_name, length: { maximum: 40 }
     validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
     validates :bith_place_id
@@ -26,7 +26,7 @@ class Tweet < ApplicationRecord
   end
 
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :reviews, dependent: :destroy
   has_many :users, through: :favorites
   has_many :favorites
