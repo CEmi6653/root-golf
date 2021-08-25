@@ -1,3 +1,22 @@
 // Place all the styles related to the sign_up controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-wrap {
+  width: 50vw;
+  padding-bottom: 70px;
+}
+
+.registration-main {
+  width: 100%;
+  min-width: 800px;
+  height: 100%;
+  background-image: image-url('golf.12.png');
+  background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}

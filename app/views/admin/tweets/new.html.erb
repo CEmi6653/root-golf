@@ -10,11 +10,8 @@
     <h2 class="golfs-tweet-title">ゴルフ場の情報を入力</h2>
     <%= form_with model: @tweet, url: admin_tweets_path, local: true do |f| %>
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
     <%= render 'shared/error_messages', model: f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
 
-    <%# 商品画像 %>
     <div class="img-upload">
       <div class="weight-bold-text">
         ゴルフ場画像
@@ -27,8 +24,7 @@
         <%= f.file_field :image, id:"golf-image" %>
       </div>
     </div>
-    <%# /商品画像 %>
-    <%# 商品名と商品説明 %>
+   
     <div class="new-golfs">
       <div class="weight-bold-text">
         ゴルフ場名
@@ -43,7 +39,6 @@
         <%= f.text_area :explanation, class:"golfs-text", id:"golf-info", placeholder:"ゴルフ場の説明（必須 1,000文字まで）（風景、移動、風呂、コース全体レビュー、注意点など）例）コース毎の絶景、道中船移動あり、浴室施設やサウナ施設完備、カップ周りはアップダウンが多めでパターが苦戦しやすい、練習コースとしてはおすすめです。" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
-    <%# /商品名と商品説明 %>
 
 
     <%# ゴルフ場の住所入力 %>

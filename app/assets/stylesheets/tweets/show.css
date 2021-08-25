@@ -58,6 +58,15 @@
 .golf-explain-text{
   color: rgb(196, 128, 104);
   text-align: center;
+  display: flex;
+  justify-content: center;
+  border:3px solid #d6ecff;
+  padding:25px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 10px;
+  
 }
 
 .golf-play-information-box{
@@ -185,18 +194,24 @@
 
 .comment-box {
   width: 50vw;
-  background-color: #fff;
   margin: 5vh 0;
   text-align: center;
+  border:3px solid #003059;
+  padding:25px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 10px;
 }
 
 .comment-text {
   width: 100%;
   height: 100px;
   padding: 10px;
-  border: solid 2px #dedede;
+  border: solid 2px rgb(69, 115, 1);
   resize: none;
   font-size: 20px;
+  color:rgb(196, 128, 104) ;
 }
 
 .comment-warn {
@@ -231,12 +246,15 @@
 }
 
 .comment-room{
-  border: #2d2d2d solid 1px;
-  padding: 10px 0;
+  border:3px solid #003059;
+  padding:25px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 10px;
   font-size: 20px;
   width: 80vw;
   height:25vh;
-  background-color:gray ;
   color: white;
   overflow:scroll;
 }

@@ -381,5 +381,36 @@ font-family: cursive, sans-serif,serif;
   width: 60%;
 }
 
+/*背景画像を表示させるためにSCSSに書いている*/
+/*マイページと詳細ページの背景*/
+
+.user-wrapper{
+  
+  background-image: image-url('firstview_slider_03.png');
+  background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
+
+.show-filed-area{
+  background-image: image-url('comment.view.png');
+  background-size: cover;
+  background-position: center center;
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
 
 
+/*投稿画面の背景*/
+.golfs-tweet-main {
+  background-image: image-url('comment.view.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}

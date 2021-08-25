@@ -12,37 +12,64 @@
         <li class="information-user-text"><%= "プレー歴: #{@user.play_histry.name} 出身地: #{@user.bith_place.name}" %></li>
       </ul>
     </div>
-    <h2 class="page-heading">
-      <%= "#{@user.nickname}さんのお気に入り一覧"%>
-    </h2>
-    <ul class='golf-lists'>
-        <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
-      <% @tweet.each do |tweet| %>
-        <li class='list'>
-          <%= link_to tweet_path(tweet.id), data: {"turbolinks" => false} do %>
-            <div class='golf-img-content'>
-            <%= image_tag tweet.image, class: "golf-img" if tweet.image.attached? %>
-            </div>
-            <div class='golf-info'>
-              <h4 class='golf-name'>
-                <%= tweet.golf_course_name %>
-              </h4>
-              <div class='golf-price'>
-                <span><%= tweet.average_amount.name %><br><%= tweet.cart_information.name %></span>
-                <div class='star-btn'>
-                  <%= image_tag "旗.png", class:"star-icon" %>
-                  <span class='star-count'>0</span>
+    <div class="favorite-area">
+    <% unless current_user.admin? %>
+      <h2 class="page-heading">
+        <%= "#{@user.nickname}さんのお気に入り一覧"%>
+      </h2>
+      <ul class='golf-lists'>
+          <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
+        <% @tweet.each do |tweet| %>
+          <li class='list'>
+            <%= link_to tweet_path(tweet.id), data: {"turbolinks" => false} do %>
+              <div class='golf-img-content'>
+              <%= image_tag tweet.image, class: "golf-img" if tweet.image.attached? %>
+              </div>
+              <div class='golf-info'>
+                <h4 class='golf-name'>
+                  <%= tweet.golf_course_name %>
+                </h4>
+                <div class='golf-price'>
+                  <span><%= tweet.average_amount.name %><br><%= tweet.cart_information.name %></span>
+                  <div class='star-btn'>
+                    <%= image_tag "旗.png", class:"star-icon" %>
+                    <span class='star-count'>0</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
-        </li>
-      <% end %>
-        
-      <% if @tweet[0] == nil %>
-        <h3 class='search-title'>お気に入り登録がありません。</h3>
-      <% end %>
-    </ul>
+            <% end %>
+          </li>
+        <% end %>
+          
+        <% if @tweet[0] == nil %>
+          <h3 class='search-title'>お気に入り登録がありません。</h3>
+        <% end %>
+      </ul>
+    <% end %>
+    </div>
+    <% if current_user.admin? %>
+    <div class="admin-comment-field">
+    
+      <div class="admin-comments">
+        <h4>＜コメント一覧＞</h4>
+        <div class="admin-comment-room">
+        <% @reviews.each do |review| %>
+            <strong><%= link_to review.tweet.golf_course_name, tweet_path(review.tweet_id) %>：</strong>
+            <strong><%=  review.user.nickname %>：</strong>
+            <strong><%=  review.created_at %>：</strong>
+            <%= review.content %>
+            <% if user_signed_in? %>
+              <% if current_user.admin? %>
+                <%= link_to "削除", tweet_review_path(@tweet,review.id),  method: :delete, class:"comment-destroy", data: {"turbolinks" => false} %></td>
+              <% end %>
+            <% end %>
+          </p>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
 
   <%= render partial: "shared/footer" %>
 </div>      
