@@ -47,7 +47,7 @@ class Admin::TweetsController < ApplicationController
   end
 
   def tweet_params
-    params.require(:tweet).permit(:image, :golf_course_name, :postal_code, :bith_place_id, :municipalities, :address, :golf_course_number, :business_hours, :play_environment_id, :golf_course_difficult_id, :average_amount_id, :travel_time_id, :explanation, :cart_information_id).merge(user_id: current_user.id)
+    params.require(:tweet).permit(:golf_course_name, :postal_code, :bith_place_id, :municipalities, :address, :golf_course_number, :business_hours, :play_environment_id, :golf_course_difficult_id, :average_amount_id, :travel_time_id, :explanation, :cart_information_id, images: []).merge(user_id: current_user.id)
   end
 
 

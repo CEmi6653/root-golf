@@ -21,8 +21,9 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"golf-image" %>
+        <%= f.file_field :images, multiple: true, name: 'tweet[images][]', id:"tweet-image" %>
       </div>
+      <div id="image-list"></div>
     </div>
    
     <div class="new-golfs">
@@ -134,6 +135,7 @@
     <%# /下部ボタン %>
   </div>
   <% end %>
+  
 
   <footer class="golfs-tweet-footer">
     <ul class="menu">
