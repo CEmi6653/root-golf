@@ -64,19 +64,22 @@
       </div>
     </div>
 
-    <%# 保存したゴルフ場の画像を表示できるようにしよう %>
-    <div class="article">
-      <% if @tweet.images.attached? %>
-        <div class="article_images">
+   
+    
+     <div class='show-golf-contents'>
+        <ul class='show-golf-lists'>
           <% @tweet.images.each do |image| %>
-            <%= image_tag image, class:"golf-img" %>
+            <li class='show-list'>
+                <div class='show-golf-img-content'>
+                <%= image_tag image, class: "show-golf-img" if @tweet.images.attached? %>
+                </div>
+            </li>
           <% end %>
-        </div>
-      <% end %>
-    </div>
-    <%# 保存したゴルフ場の画像を表示できるようにしよう %>
+        </ul>
+      </div>
+    
     <div class="comment-field-area">
-      <%# /商品の概要 %>
+     
       <% if user_signed_in? %>
         <%= form_with(model: [@tweet, @review], local: true) do |f| %>
           <div class="comment-box">
@@ -113,6 +116,5 @@
       </div>
     </div>
   </div>
-  
   <%= render partial: "shared/footer" %>
 </div>

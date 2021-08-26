@@ -16,6 +16,7 @@
   align-items: center;
 }
 
+
 .name{
   color: rgb(69, 115, 1);
 }
@@ -26,10 +27,11 @@
 }
 
 .golf-box-img {
-  height: 100vh;
-  width: 100vw;
+  padding-top: 2rem;
+  height: 80vh;
+  width: 80vw;
   min-height: 500px;
-  
+  background-size: cover;
 }
 
 .golf-information-area{
@@ -135,56 +137,42 @@
   margin-right: 5px;
 }
 
-.report-btn {
-  border-radius: 40px;
-  width: 15vw;
-  min-width: 200px;
 
-  padding: 1vh 0;
-  color: black;
-  border: 2px solid #2d2d2d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+.show-golf-contents{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 10vh 0;
+} 
 
-.report-flag-icon {
-  margin-right: 5px;
-}
-
-
-.inner {
-  width: 1024px;
-  margin: 0 auto;
-}
-.logo {
-  width: 100px;
-}
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-}
-.card__wrapper {
+.show-golf-lists {
+  width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  opacity: 0.80;
+  overflow: hidden;
+  
 }
-.card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
+
+
+/* .show-golf-lists>.show-list {
+  width: 37vh;
+  padding: 1vw;
+  
+} */
+
+.show-golf-img-content {
+  position: relative;
+  object-fit: cover;
+  padding: 1vh 1vw;
 }
-.card__img {
-  margin-bottom: 16px;
+
+.show-golf-img {
+  width: 500px;
+  height: 300px;
 }
-.card__title {
-  font-size: 24px;
-  margin-bottom: 8px;
-}
-.card__summary {
-  font-size: 18px;
-}
-/* /商品の概要 */
+
 
 .comment-field-area{
  display: flex;
