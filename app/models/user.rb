@@ -18,7 +18,7 @@ class User < ApplicationRecord
     validates :bith_place_id
   end
 
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :tweets
   has_many :reviews
   has_many :tweets, through: :favorites
