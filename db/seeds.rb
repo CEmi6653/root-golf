@@ -11,19 +11,11 @@ User.create!(
       admin: true
     },
 
-    {
-      nickname: "ゴルフ30"
-      email: "west@west",
-      password:  "111qqq",
-      password_confirmation: "111qqq",
-      bith_place_id: 15,
-      play_style_id: 3,
-      play_histry_id: 3
-    },
+    
 
     {
-      nuckname: "39岡崎"
-      email: "test@test",
+      nuckname: "39岡崎",
+      email: "test@test.com",
       password:  "123qwe",
       password_confirmation: "123qwe",
       bith_place_id: 15,
