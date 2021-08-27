@@ -20,51 +20,30 @@
         <% end %>
         </div>
           <%# トップページの背景画像 %>
-      </div>
-      <div class="topic-content">
+        <div class="topic-content">
         <div class="page-description">
             <h2>RootGolf</h2>
             <p>失敗しないコース選び</p>
             <p>あなたも共有しませんか</p>
         </div>
+      </div>  
       </div>
+      
       <div class="player-data-area">
         
-        <div class="topic-content">
-          <div class="page-description">
+        <div class="player-topic-content">
+          <div class="player-page-description">
             <p>初心者、上級者、プロ</p>
-            <p>GOlfユーザーが選ぶコース基準</p>
+            <p>GOlfユーザーが選ぶコース基準の割合</p>
           </div>
         </div>
-          <canvas id="myPieChart"></canvas>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
-
-          <script>
-          var ctx = document.getElementById("myPieChart");
-          var myPieChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-              labels: ["プレー環境:38%", "料金:31%", "移動時間21%", "難易度:10%"],
-              datasets: [{
-                  backgroundColor: [
-                      "#BB5179",
-                      "#FAFF67",
-                      "#58A27C",
-                      "#3C00FF"
-                  ],
-                  data: [38, 31, 21, 10]
-              }]
-            },
-            options: {
-              title: {
-                display: true,
-                text: 'ユーザーが選ぶ基準'
-              }
-            }
-          });
-          </script>
+        <div class="player-chart-date">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+        <%= pie_chart @aggregate, width: "800px", height: "500px" %>
+        </div>
       </div>
-    
+
+      
       <div class='golf-contents'>
         <h3 class='title'>Recommended place for you</h3>
         <div class="subtitle" >
