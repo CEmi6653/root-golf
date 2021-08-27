@@ -5,7 +5,28 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all
+    @opinion = User.pluck(:play_style_id)
+    @aggregate = aggregateOpinion(@opinion)
   end
+
+  def aggregateOpinion(array)
+    result = [["プレー環境",0],["コース難易度",0],["プレー料金",0],["移動時間",0]]
+    array.each do |i|
+      if i == 2
+        result[0][1] += 1
+      elsif i == 3
+        result[1][1] += 1
+      elsif i == 4
+        result[2][1] += 1
+      else 
+        result[3][1] += 1
+      end
+    end
+    return result
+  end
+
+ 
+  
 
   def show
     @tweet = Tweet.find(params[:id])   

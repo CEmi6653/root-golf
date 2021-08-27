@@ -242,7 +242,6 @@ opacity:0;
 }
 .topic-content {
   height: 200px;
-  background-color:white;
   display: flex;
   justify-content: center;
 }
@@ -252,12 +251,31 @@ opacity:0;
   text-align: center;
   padding: 50px 50px;
   font-family: serif,sans-serif, cursive;
-  color: #333;
+  color: white;
 }
 
 .player-data-area {
   margin-bottom: 10%;
- 
+}
+
+.player-topic-content {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+.player-page-description{
+  display: block;
+  text-align: center;
+  padding: 50px 50px;
+  font-family: serif,sans-serif, cursive;
+  color: black;
+}
+
+.player-chart-date{
+  display: block;
+  align-items: center;
+  justify-content: center; 
 }
 
 .golf-contents{
