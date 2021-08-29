@@ -63,6 +63,9 @@ http://18.180.41.245/
 
 
 ## 新規登録ページ
+![1a76766cfb2eeb30f0c97d664d7a78f7](https://user-images.githubusercontent.com/86937544/131246580-d5b2ab24-82c8-404d-b14b-14273985c279.png)
+![ffedbb29b0627278ecaffb3865512554](https://user-images.githubusercontent.com/86937544/131246599-b95bdb9a-23b0-40de-9b53-b4ceef27d6a7.png)
+
 
 ## 詳細表示ページ(未ログインユーザー)
 ## 詳細表示ページ(ログインユーザー)
