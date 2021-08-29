@@ -97,14 +97,40 @@ http://18.180.41.245/
 
 
 ## 編集削除機能(管理者)
+![tweet-edit](https://user-images.githubusercontent.com/86937544/131247450-26e55604-f9a5-4310-8f89-4437cdc6e6fc.png)
 
-![tweet-edit](https://user-images.githubusercontent.com/86937544/131247359-44cf43c2-6127-4387-998d-cf7e0ce37cd5.gif)
+
 
 ## コメント機能(管理者だけが削除できます)
+
+
+![login-show-admin](https://user-images.githubusercontent.com/86937544/131247044-b9d711b2-1371-46cc-ac7e-8554b851f07e.png)
+
+![login-show-admin1](https://user-images.githubusercontent.com/86937544/131247057-22f07cd7-63e0-4a62-b6f8-ef9154b68ff8.png)
+
+
 ## お気に入り機能
+
+![tweet-favorit](https://user-images.githubusercontent.com/86937544/131247521-8d60bc39-272d-405c-bb3a-6f3e737236e7.png)
+
+![tweet-favorit1](https://user-images.githubusercontent.com/86937544/131247531-d15103d0-2486-473c-9560-7136d4df4403.png)
+
 ## マイページ機能
+
+![user-show](https://user-images.githubusercontent.com/86937544/131247900-92b0c014-7264-463c-a98f-57ddf20cf6a7.png)
+![user-show1](https://user-images.githubusercontent.com/86937544/131247907-64126e23-eb11-4600-8e97-a6a3093a001c.png)
+![user-show2](https://user-images.githubusercontent.com/86937544/131247914-e9be6871-d117-4279-82e3-3586d86c3a91.png)
+![user-show3](https://user-images.githubusercontent.com/86937544/131247918-dca083b9-93ff-47ec-9d57-ca49860eedf1.png)
+
+
+![admin-show](https://user-images.githubusercontent.com/86937544/131247929-8f3a70c8-5d0c-429d-8a53-5c6faa34d6e8.png)
+![admin-show1](https://user-images.githubusercontent.com/86937544/131247932-75ed79b8-ae55-4c93-aafd-16dcfd0da456.png)
+
+
 ## 検索機能
 
+![index-user](https://user-images.githubusercontent.com/86937544/131248024-b77394c2-8c82-429b-8fdd-b3577fb51484.png)
+![index-user1](https://user-images.githubusercontent.com/86937544/131248028-a11c2d52-c1c7-4ddf-a94f-47d6eade1e98.png)
 
 # 洗い出した要件																			
 															
