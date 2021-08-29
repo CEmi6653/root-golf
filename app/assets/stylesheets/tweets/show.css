@@ -211,8 +211,8 @@ padding: 10vh 0;
 
 .comment-btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color: rgb(69, 115, 1);
+  border: 1px solid rgb(69, 115, 1);
   color: #fff;
   width: 50%;
   min-width: 150px;
