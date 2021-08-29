@@ -68,8 +68,26 @@ http://18.180.41.245/
 
 
 ## 詳細表示ページ(未ログインユーザー)
+![logout-show](https://user-images.githubusercontent.com/86937544/131246807-6f6a7fd6-c178-4285-83a6-633d136d272f.png)
+
+![logout-show1](https://user-images.githubusercontent.com/86937544/131246828-e8028c10-c4da-44db-9c26-2f99f73afe5f.png)
+
+![logout-show2](https://user-images.githubusercontent.com/86937544/131246844-d2e38ee5-2899-4427-9592-873e55f58549.png)
+
+![logout-show3](https://user-images.githubusercontent.com/86937544/131246860-e8c80db6-20b3-4546-b5df-c3e97b01a306.png)
+
 ## 詳細表示ページ(ログインユーザー)
+![login-show](https://user-images.githubusercontent.com/86937544/131247011-02b1c760-ba6b-4e60-935c-39f3ff627a6c.png)
+
+
+![login-show1](https://user-images.githubusercontent.com/86937544/131247035-ad9d68bd-1a80-4f86-9b45-6a16f16fbed0.png)
+
 ## 詳細表示ページ(管理者)
+
+![login-show-admin](https://user-images.githubusercontent.com/86937544/131247044-b9d711b2-1371-46cc-ac7e-8554b851f07e.png)
+
+![login-show-admin1](https://user-images.githubusercontent.com/86937544/131247057-22f07cd7-63e0-4a62-b6f8-ef9154b68ff8.png)
+
 
 ## 編集削除機能(管理者)
 ## コメント機能(管理者だけが削除できます)
