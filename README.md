@@ -57,6 +57,10 @@ http://18.180.41.245/
 
 ## トップページ
 ![9771e8607d1e1d94cc08ed7d1f183e00](https://user-images.githubusercontent.com/86937544/131246318-916b13cd-94f3-42bd-8821-2f4c0f936a77.png)
+<img width="1440" alt="98d3d73ee6ae845b346d65a5ddf4b850" src="https://user-images.githubusercontent.com/86937544/131246384-16639eb9-b6d3-4faf-8240-481af43d6c73.png">
+![05f26f3b9c4135ed8ca4d1f42f255750](https://user-images.githubusercontent.com/86937544/131246426-f1e5716c-b6fc-406c-b48f-2f49c761e781.png)
+
+
 
 ## 新規登録ページ
 
