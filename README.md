@@ -66,6 +66,13 @@ http://18.180.41.245/
 ![1a76766cfb2eeb30f0c97d664d7a78f7](https://user-images.githubusercontent.com/86937544/131246580-d5b2ab24-82c8-404d-b14b-14273985c279.png)
 ![ffedbb29b0627278ecaffb3865512554](https://user-images.githubusercontent.com/86937544/131246599-b95bdb9a-23b0-40de-9b53-b4ceef27d6a7.png)
 
+## 投稿ページ
+![tweet](https://user-images.githubusercontent.com/86937544/131247207-4f4080f0-330d-499f-88d6-81be6b8bb91b.png)
+
+
+![tweet1](https://user-images.githubusercontent.com/86937544/131247218-7c31aa6d-2989-4104-9e01-3aac0de1fef6.png)
+
+![tweet2](https://user-images.githubusercontent.com/86937544/131247237-fc40a570-b446-4e11-8fcd-b798942cf651.png)
 
 ## 詳細表示ページ(未ログインユーザー)
 ![logout-show](https://user-images.githubusercontent.com/86937544/131246807-6f6a7fd6-c178-4285-83a6-633d136d272f.png)
