@@ -56,8 +56,7 @@ http://18.180.41.245/
 # DEMO
 
 ## トップページ
-![image from Gyazo](https://gyazo.com/0207b1c99245a315ea1f609645fb6afb.gif)
-![0207b1c99245a315ea1f609645fb6afb](https://user-images.githubusercontent.com/86937544/131245996-46257ad3-1d7d-4706-a0d3-3f88c9d3b3a2.gif)
+![9771e8607d1e1d94cc08ed7d1f183e00](https://user-images.githubusercontent.com/86937544/131246318-916b13cd-94f3-42bd-8821-2f4c0f936a77.png)
 
 ## 新規登録ページ
 
