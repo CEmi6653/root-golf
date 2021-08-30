@@ -26,6 +26,9 @@
 EC2
 http://18.180.41.245/
 
+basic認証のID: admin
+PASS: 2222
+
 
 # テスト用アカウント
 
@@ -70,16 +73,11 @@ http://18.180.41.245/
 ![tweet](https://user-images.githubusercontent.com/86937544/131247207-4f4080f0-330d-499f-88d6-81be6b8bb91b.png)
 
 
-![tweet1](https://user-images.githubusercontent.com/86937544/131247218-7c31aa6d-2989-4104-9e01-3aac0de1fef6.png)
-
 ![tweet2](https://user-images.githubusercontent.com/86937544/131247237-fc40a570-b446-4e11-8fcd-b798942cf651.png)
 
 ## 詳細表示ページ(未ログインユーザー)
 ![logout-show](https://user-images.githubusercontent.com/86937544/131246807-6f6a7fd6-c178-4285-83a6-633d136d272f.png)
 
-![logout-show1](https://user-images.githubusercontent.com/86937544/131246828-e8028c10-c4da-44db-9c26-2f99f73afe5f.png)
-
-![logout-show2](https://user-images.githubusercontent.com/86937544/131246844-d2e38ee5-2899-4427-9592-873e55f58549.png)
 
 ![logout-show3](https://user-images.githubusercontent.com/86937544/131246860-e8c80db6-20b3-4546-b5df-c3e97b01a306.png)
 
@@ -101,29 +99,13 @@ http://18.180.41.245/
 
 
 
-## コメント機能(管理者だけが削除できます)
-
-
-![login-show-admin](https://user-images.githubusercontent.com/86937544/131247044-b9d711b2-1371-46cc-ac7e-8554b851f07e.png)
-
-![login-show-admin1](https://user-images.githubusercontent.com/86937544/131247057-22f07cd7-63e0-4a62-b6f8-ef9154b68ff8.png)
-
-
-## お気に入り機能
-
-![tweet-favorit](https://user-images.githubusercontent.com/86937544/131247521-8d60bc39-272d-405c-bb3a-6f3e737236e7.png)
-
-![tweet-favorit1](https://user-images.githubusercontent.com/86937544/131247531-d15103d0-2486-473c-9560-7136d4df4403.png)
-
 ## マイページ機能
 
 ![user-show](https://user-images.githubusercontent.com/86937544/131247900-92b0c014-7264-463c-a98f-57ddf20cf6a7.png)
-![user-show1](https://user-images.githubusercontent.com/86937544/131247907-64126e23-eb11-4600-8e97-a6a3093a001c.png)
-![user-show2](https://user-images.githubusercontent.com/86937544/131247914-e9be6871-d117-4279-82e3-3586d86c3a91.png)
+
 ![user-show3](https://user-images.githubusercontent.com/86937544/131247918-dca083b9-93ff-47ec-9d57-ca49860eedf1.png)
 
 
-![admin-show](https://user-images.githubusercontent.com/86937544/131247929-8f3a70c8-5d0c-429d-8a53-5c6faa34d6e8.png)
 ![admin-show1](https://user-images.githubusercontent.com/86937544/131247932-75ed79b8-ae55-4c93-aafd-16dcfd0da456.png)
 
 
