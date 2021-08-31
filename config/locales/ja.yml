@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        play_style_id: プレースタイル
+        play_histry_id: プレー歴
+        bith_place_id: 出身地
+      tweet:
+        text: テキスト
+        images: 画像
+        golf_course_name: ゴルフ場名
+        postal_code: 郵便番号
+        bith_place_id: 都道府県
+        municipalities: 市区町村
+        address: 番地
+        golf_course_number: 電話番号
+        business_hours: 営業時間
+        play_environment_id: ゴルフ場のプレー環境
+        golf_course_difficult_id: コース難易度
+        average_amount_id: 予約サイトの平均金額
+        travel_time_id: 最寄りICからの移動距離
+        cart_information_id: カート情報
+        explanation: ゴルフ場の説明
+        

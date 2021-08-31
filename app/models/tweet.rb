@@ -2,7 +2,7 @@ class Tweet < ApplicationRecord
   with_options presence: true do
     validates :images
     validates :golf_course_name, length: { maximum: 40 }
-    validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
+    validates :postal_code, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "ハイフン(-)を入れてください"}
     validates :bith_place_id
     validates :municipalities
     validates :address
@@ -16,7 +16,7 @@ class Tweet < ApplicationRecord
     validates :cart_information_id
     validates :user_id
   end
-  with_options numericality: { other_than: 1 , message: "can't be blank"} do
+  with_options numericality: { other_than: 1 , message: "を選択してください"} do
     validates :bith_place_id
     validates :play_environment_id
     validates :golf_course_difficult_id

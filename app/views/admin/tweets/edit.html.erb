@@ -11,7 +11,7 @@
     <h2 class="golfs-tweet-title">ゴルフ場の情報を入力</h2>
     <%= form_with model: @tweet, url: admin_tweet_path, method: :put, local: true do |f| %>
 
-    <%= render 'shared/error_messages', model: f.object %>
+    <%= render 'layouts/error_messages', model: f.object %>
 
     <div class="img-upload">
       <div class="weight-bold-text">
