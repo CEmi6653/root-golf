@@ -78,9 +78,7 @@ img{
   width: 100px;
   
 }
-/* /商品画像 */
 
-/* 商品名と商品説明 */
 .new-golfs {
   padding: 2vh 0;
 }
@@ -100,15 +98,12 @@ img{
   margin-top: 2vh;
 }
 
-/* /商品名と商品説明 */
 
-/* 配送先の入力 */
+
 .golfs-address-form {
   margin-top: 15px;
 }
-/* 配送先の入力 */
 
-/* 商品の詳細など */
 .golfs-detail {
   display: flex;
   justify-content: space-between;
@@ -124,7 +119,6 @@ img{
   margin: 2vh 0;
 }
 
-/* /商品の詳細など */
 
 
 
@@ -157,7 +151,6 @@ img{
   border-radius: 100px;
 }
 
-/* /下部ボタン */
 
 .golfs-tweet-footer {
   background-color:black;
