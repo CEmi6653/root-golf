@@ -189,6 +189,9 @@ GoogleマップやYouTubeの情報を詳細ページに載せれるようにす�
 細かく区分けすることによって絡み合ったエラーが出ることもなく、
 実装毎に本番環境で確認していましたので、すぐに修正ができ効率よく実装できました。
 モデルの単体テストを実装したフェースに応じて実行したこと。
+多くアクティブハッシュを使っていること。
+複数画像の投稿をできるようにしたこと。
+
 
 
 
@@ -227,13 +230,13 @@ Github/GithubDesktop/AWS/S3/EC2/Heroku/Visual Studio Code
 ### Association
 
 
--has_many: favorites
+-has_many: favorites, dependent: :destroy
 -has_many: tweets, through: :favorites
 -has_many: tweets
 -has_many: reviews
 
 
-## golfテーブル
+## tweetテーブル
 
 | Column                  | Type       | Options           |
 |-------------------------|------------|-------------------|
@@ -242,21 +245,22 @@ Github/GithubDesktop/AWS/S3/EC2/Heroku/Visual Studio Code
 | bith_place_id           | integer    | null: false       |
 | municipalities          | string     | null: false       |
 | address                 | string     | null: false       |
-| golf_course_number_id   | integer    | null: false       |
-| business_hours_id       | integer    | null: false       |
+| golf_course_number      | string     | null: false       |
+| business_hours          | string     | null: false       |
 | play_environment_id     | integer    | null: false       |
 | golf_course_difficult_id| integer    | null: false       |
 | average_amount_id       | integer    | null: false       |
 | travel_time_id          | integer    | null: false       |
-| explanation             | integer    | null: false       |
+| explanation             | string     | null: false       |
 | cart_information_id     | integer    | null: false       |
 | user                    | references | foreign_key: true |
 
 ### Association
 
 belongs_to :user
-has_many: reviews
-has_many: favorites
+has_many_attached :images
+has_many: reviews, dependent: :destroy
+has_many: favorites, dependent: :destroy
 has_many: users, through: :favorites
 
 
@@ -265,7 +269,7 @@ has_many: users, through: :favorites
 | Column                  | Type       | Options                         |
 |-------------------------|------------|---------------------------------|
 | user                    | references | null: false , foreign_key: true |
-| golf                    | references | null: false , foreign_key: true |
+| tweet                   | references | null: false , foreign_key: true |
 
 
 ### Association
@@ -281,7 +285,7 @@ belongs_to: tweet
 | user                    | references    | null: false foreign_key:true    |
 | tweet                   | references    | null: false foreign_key:true    |
 | rate                    | float         |                                 | 
-| content                 | text          | null: false                     |
+| content                 | string        | null: false                     |
 
 
 ### Association
